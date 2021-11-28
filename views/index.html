@@ -2,18 +2,65 @@
 <head>
     <meta charset="UTF-8">
     <title>EDUFIN - Educação Financeira</title>
+    <link href="./../style.css" rel="stylesheet">
 </head>
 <body>
     <h1>Educação Financeira</h1>
     <h2>Bem vindo ao nosso portal de cursos!</h2>
     <br>
-    <p>Selecione a ação desejada abaixo:</p>
-    <table>
-        <tr><td><button id="addCurso"><a href = addCurso.html>Adicionar curso</a></button></td></tr>
-        <tr><td><button id="searchCurso"><a href = searchCurso.html>Pesquisar curso</a></button></td></tr>
-        <tr><td><button id="listCurso"><a href = listCurso.html>Lista completa de cursos</a></button></td></tr>
-        <tr><td><button id="updateCurso"><a href = updateCurso.html>Atualizar curso</a></button></td></tr>
-        <tr><td><button id="delCurso"><a href = delCurso.html>Deletar curso</a></button></td></tr>
-    </table>
+    <table><td>
+        <p>Para adiconar um novo curso ao catalogo, favor preencher os campos abaixo</p>
+        <form action="" class="container" id="addForm" add-curso>
+            <input new-id-curso type="number" id="newId" placeholder="ID (número)"/>
+            <input new-titulo-curso type="text" id="newTitle" placeholder="Título"/>
+            <input new-descricao-curso type="text" id="newDesc" placeholder="Descrição"/>
+            <input new-imagem-curso type="url" id="newImg" placeholder="Endereço da Imagem"/>
+            <input new-prof-curso type="text" id="newProf" placeholder="Professor"/>
+            <input new-aulas-curso type="url" id="newAulas" placeholder="Link com as aulas"/>
+            <button id="confirmAdd">ADICIONAR</button>
+        </form>
+    </td></table>
+    <table><td>
+        <p>Para encontrar um curso específico, favor informar algum(uns) parâmetro(s) de pesquisa abaixo (serão apresentados cursos que atendam ao menos um deles)</p>
+        <form action="" class="container" id="searchForm" search-curso>
+            <input search-id type="number" id="searchId" placeholder="ID (número)"/>
+            <input search-titulo type="text" id="searchTitle" placeholder="Título"/>
+            <input search-descricao type="text" id="searchDesc" placeholder="Descrição"/>
+            <input search-imagem type="url" id="searchImg" placeholder="Endereço da Imagem"/>
+            <input search-prof type="text" id="searchProf" placeholder="Professor"/>
+            <input search-aulas type="url" id="searchAulas" placeholder="Link com as aulas"/>
+            <button id="confirmsearch">PESQUISAR</button>
+        </form>
+    </td></table>
+    <button id="viewAll" fullList>VISUALIZAR LISTA COMPLETA</button>
+    <div id="cursosContainer" lista-cursos>
+        <table tabelaCursos>
+            <tr>
+                <th>ID</th>
+                <th>Título</th>
+                <th>Descrição</th>
+                <th>Imagem</th>
+                <th>Professor</th>
+                <th>Aulas</th>
+                <th>Data/hora adicionado</th>
+                <th>Data/hora atualizados</th>
+                <th>Atualizar curso</th>
+                <th>Remover curso</th>
+            </tr>
+        </table>
+    </div>
+    <table updateInfo id="updateInfo" hidden = true><td>
+        <p>Informe abaixo os campos que devem ser atualizados no registro selecionado. 
+            Utilize o botão <strong>Visualizar Lista Completa</strong> para cancelar ou clique em <strong>Editar</strong> novamente</p>
+        <form action="" class="container" id="updateForm" update-curso>
+            <input update-id type="number" id="updateId" placeholder="ID (número)"/>
+            <input update-titulo type="text" id="updateTitle" placeholder="Título"/>
+            <input update-descricao type="text" id="updateDesc" placeholder="Descrição"/>
+            <input update-imagem type="url" id="updateImg" placeholder="Endereço da Imagem"/>
+            <input update-prof type="text" id="updateProf" placeholder="Professor"/>
+            <input update-aulas type="url" id="updateAulas" placeholder="Link com as aulas"/>
+            <button id="confirmUpdate" btnUpdate>ATUALIZAR CURSO SELECIONADO</button>
+        </form>
+    </td></table>
     <script src="./../scripts/addCurso.js"></script>
 </body>
