@@ -211,6 +211,7 @@ updateCursoForm.addEventListener('submit', function(e) {
                 lista_cursos[updateIndex].imagem = upImg;
                 lista_cursos[updateIndex].professor = upProf;
                 lista_cursos[updateIndex].aulas = upAulas;
+                lista_cursos[updateIndex].dtUpdate = new Date().toISOString();
                 restartList();
                 renderList(lista_cursos);
                 updateInfo.hidden = true;
